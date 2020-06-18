@@ -2,7 +2,7 @@ import sys
 from typing import Optional
 
 
-def read_command_line_arg(argument: str) -> Optional[str]:
+def read_command_line_arg(argument):
     """Read an command line argument.
 
             Arguments:
@@ -19,7 +19,7 @@ def read_command_line_arg(argument: str) -> Optional[str]:
     return reply
 
 
-def command_line_arg_defined(argument: str) -> bool:
+def command_line_arg_defined(argument):
     """Check if a command line argument is defined.
 
             Arguments:
@@ -34,7 +34,7 @@ def command_line_arg_defined(argument: str) -> bool:
         return False
 
 
-def read_all_cli_args_to_dict() -> dict:
+def read_all_cli_args_to_dict():
     """Returns all cli args (that start with --) key/value pairs as a single dict.
 
             Returns:
