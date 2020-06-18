@@ -14,6 +14,8 @@ import warnings
 
 
 class ParseIt:
+    """parsers"""
+
     def __init__(
         self,
         config_type_priority=None,
