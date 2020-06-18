@@ -2,7 +2,7 @@ from parse_it.file.file_reader import *
 import yaml
 
 
-def parse_yaml_file(path_to_yaml_file: str) -> dict:
+def parse_yaml_file(path_to_yaml_file):
     """take a path to a YAML file & returns it as a valid python dict.
 
             Arguments:

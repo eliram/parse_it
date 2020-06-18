@@ -1,6 +1,7 @@
 import os
-import dpath.util
-import dpath.options
+
+# import dpath.util
+# import dpath.options
 from typing import Optional, Union
 
 
@@ -87,20 +88,20 @@ def split_envvar(envvar, value, divider="_"):
     return envvar_dict
 
 
-def split_envvar_combained_dict(divider="_", force_uppercase=True):
-    """Returns a dict of all envvars that has had their keys split by the divider into nested dicts
+# def split_envvar_combained_dict(divider="_", force_uppercase=True):
+#     """Returns a dict of all envvars that has had their keys split by the divider into nested dicts
 
-                    Arguments:
-                        divider -- the string letter by which to divide the envvar key by, defaults to "_"
-                        force_uppercase -- if the envvar key will be forced to be all in UPPERCASE, defaults to True
-                    Returns:
-                        envvar_split_dict -- A dict that is the result of all envvars being split by the divider with
-                            the value appended as the bottom most of the nest key
-    """
-    envvar_dict = read_all_envvars_to_dict(force_uppercase=force_uppercase)
-    envvar_split_dict = {}
-    for envvar_key, envvar_value in envvar_dict.items():
-        dpath.options.ALLOW_EMPTY_STRING_KEYS = True
-        temp_split_envvar = split_envvar(envvar_key, envvar_value, divider=divider)
-        dpath.util.merge(envvar_split_dict, temp_split_envvar)
-    return envvar_split_dict
+#                     Arguments:
+#                         divider -- the string letter by which to divide the envvar key by, defaults to "_"
+#                         force_uppercase -- if the envvar key will be forced to be all in UPPERCASE, defaults to True
+#                     Returns:
+#                         envvar_split_dict -- A dict that is the result of all envvars being split by the divider with
+#                             the value appended as the bottom most of the nest key
+#     """
+#     envvar_dict = read_all_envvars_to_dict(force_uppercase=force_uppercase)
+#     envvar_split_dict = {}
+#     for envvar_key, envvar_value in envvar_dict.items():
+#         dpath.options.ALLOW_EMPTY_STRING_KEYS = True
+#         temp_split_envvar = split_envvar(envvar_key, envvar_value, divider=divider)
+#         dpath.util.merge(envvar_split_dict, temp_split_envvar)
+#     return envvar_split_dict

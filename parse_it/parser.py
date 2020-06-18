@@ -20,7 +20,7 @@ class ParseIt:
         self,
         config_type_priority=None,
         global_default_value=None,
-        type_estimate=True,
+        type_estimate=False,
         recurse=False,
         force_envvars_uppercase=True,
         config_location=None,
@@ -158,7 +158,7 @@ class ParseIt:
                 if self.config_location.endswith(file_type_ending):
                     self.config_files_dict[file_type_ending].append(self.config_location)
 
-    def read_configuration_variable(self, config_name, default_value=None, required=False, allowed_types=None) -> Any:
+    def read_configuration_variable(self, config_name, default_value=None, required=False, allowed_types=None):
         """reads a single key of the configuration and returns the first value of it found based on the priority of each
                 config file option given in the __init__ of the class
 
@@ -244,7 +244,7 @@ class ParseIt:
 
     def read_multiple_configuration_variables(
         self, config_names, default_value=None, required=False, allowed_types=None,
-    ) -> dict:
+    ):
         """reads multiple keys of the configuration and returns the first value of each it found based on the priority
                 of each config file option given in the __init__ of the class, basically a simple loop of the
                 read_configuration_variable function with all the configurable values being the same in all iterations
@@ -269,7 +269,9 @@ class ParseIt:
             )
         return config_value_dict
 
-    def read_all_configuration_variables(self, default_value=None, required=None, allowed_types=None,) -> dict:
+    def read_all_configuration_variables(
+        self, default_value=None, required=None, allowed_types=None,
+    ):
         """reads all configuration variables from all allowed sources and returns a dict that includes the combined
                         result of all of them, if a configuration variable exists in two (or more) different sources the
                          one with the higher priority will be the only one returned
@@ -349,7 +351,7 @@ class ParseIt:
         return config_value_dict
 
     @staticmethod
-    def _check_config_in_dict(config_key, config_dict) -> Tuple[bool, Any]:
+    def _check_config_in_dict(config_key, config_dict):
         """internal function which checks if the key is in a given dict
 
             Arguments:
@@ -369,7 +371,7 @@ class ParseIt:
             config_found = False
         return config_found, config_value
 
-    def _parse_file_per_type(self, config_file_type, config_file_location) -> dict:
+    def _parse_file_per_type(self, config_file_type, config_file_location):
         """internal function which parses a file to a dict when given the file format type and it's location
 
             Arguments:

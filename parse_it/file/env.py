@@ -1,7 +1,7 @@
 from dotenv import dotenv_values
 
 
-def parse_env_file(path_to_env_file: str) -> dict:
+def parse_env_file(path_to_env_file):
     """take a path to a env file & returns it as a valid python dict.
 
             Arguments:

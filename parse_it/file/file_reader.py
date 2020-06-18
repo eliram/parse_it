@@ -4,7 +4,7 @@ import os
 import warnings
 
 
-def read_file(file_path: str) -> Optional[str]:
+def read_file(file_path):
     """Read a file and returns it's contents (as a string) or None if file does not exist.
 
      Arguments:
@@ -20,7 +20,7 @@ def read_file(file_path: str) -> Optional[str]:
         return None
 
 
-def folder_exists(folder_path: str) -> bool:
+def folder_exists(folder_path):
     """Returns True if folder exists, False otherwise.
 
      Arguments:
@@ -32,7 +32,7 @@ def folder_exists(folder_path: str) -> bool:
     return possible_folder.is_dir()
 
 
-def file_or_folder(checked_path: str) -> Optional[str]:
+def file_or_folder(checked_path):
     """Returns "file" if the file_path is a file, "folder" if it's a dir & None otherwise.
 
      Arguments:
@@ -49,7 +49,7 @@ def file_or_folder(checked_path: str) -> Optional[str]:
         return None
 
 
-def strip_trailing_slash(folder_path: str) -> str:
+def strip_trailing_slash(folder_path):
     """if a folder_path ends in a slash strip it & return the path, otherwise just return the path, only edge case is
         the root folder (/) which is kept the same.
 
@@ -63,7 +63,7 @@ def strip_trailing_slash(folder_path: str) -> str:
     return folder_path
 
 
-def file_types_in_folder(folder_path: str, file_types_endings: list, recurse: bool = True) -> dict:
+def file_types_in_folder(folder_path, file_types_endings, recurse=True):
     """list all the config file types found inside the given folder based on the filename extension
 
         Arguments:
